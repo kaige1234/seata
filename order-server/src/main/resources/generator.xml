@@ -18,7 +18,7 @@
 
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.1.4/order" userId="root"
+                        connectionURL="jdbc:mysql://192.168.1.4/seata" userId="root"
                         password="123456">
         </jdbcConnection>
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和
@@ -35,8 +35,8 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
         <!--生成映射文件存放位置 -->
-        <sqlMapGenerator targetPackage="src/main/resources/mapper"
-                         targetProject="/Users/sunkai/IdeaProjects/test-seata/order-server/src/main/resources/mapper">
+        <sqlMapGenerator targetPackage="com/order/orderserver/mapper"
+                         targetProject="/Users/sunkai/IdeaProjects/test-seata/order-server/src/main/java/com/order/orderserver/mapper">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
         <!--生成Dao类存放位置 -->
@@ -47,7 +47,7 @@
 
 
         <!-- tableName:用于自动生成代码的数据库表；domainObjectName:对应于数据库表的javaBean类名 -->
-        <table schema="general" tableName="T_USER" domainObjectName="User">
+        <table schema="general" tableName="test" domainObjectName="Test">
             <!--domain字段的命名规则，false:默认为驼峰命名 true:按数据库真实命名  -->
             <property name="useActualColumnNames" value="false"/>
             <!-- 忽略列，不生成bean 字段 -->
